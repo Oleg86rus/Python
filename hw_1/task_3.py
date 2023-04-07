@@ -12,7 +12,8 @@
 # 123456 -> no
 
 
-def lucky(num):
+def lucky():
+    num = int(input('Введите число: '))
     num_in_str = str(num)
     first_count = 0
     second_count = 0
@@ -26,5 +27,4 @@ def lucky(num):
     else:
         return 'no'
     
-print(lucky(385916))
-print(lucky(123456))
+print(lucky())

@@ -5,12 +5,12 @@
 # 123 -> 6 (1 + 2 + 3)
 # 100 -> 1 (1 + 0 + 0) |
 
-def summ(num):
+def summ():
+    num = int(input('Введите число: '))
     res = 0
     number_as_string = str(num)
     for i in range(len(number_as_string)):
         res += int(number_as_string[i])
     return res
     
-print(summ(123))
-print(summ(100))
+print(summ())

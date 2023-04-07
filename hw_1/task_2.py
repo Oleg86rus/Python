@@ -12,12 +12,11 @@
 #     60 -> 10  40  10
 # если получается некорректное разделение - напечатать "Неверное S"
 
-def child(num):
+def child():
+    num = int(input('Введите число: '))
     for i in range(num):
-        if ((i + i + i * 4) == num):
-            return (i, i*4, i)
+        if (i + i + i * 4) == num:
+            return i, i * 4, i
     return "Неверное S"
         
-print(child(6))
-print(child(24))
-print(child(60))
+print(child())
