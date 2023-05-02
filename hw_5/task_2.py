@@ -5,11 +5,28 @@
 #     A = 2; B = 3 -> 8
 
 
-def task_1(a, b):
-    if (b == 1):
-        return a
-    else:
-        return a * task_1(a, b - 1)
-num = int(input('Введите число для возведения в степень: '))
-exp = int(input('Введите степень: '))
-print(task_1(num, exp))
+def task_2():
+    str = input('Введите строку: ')
+    arr = [char for char in str]
+    numbers = []
+    if len(str) == 0:
+        print("Ошибка, вы ввели пустую строку!")
+        return 0
+    for i in range(len(arr)):
+        if i > 0:
+            if arr[i] == arr[i - 1]:
+                continue
+        count = 1
+        for j in range(i + 1, len(arr)):
+            if arr[j] == arr[i]:
+                count += 1
+            else:
+                break
+        if count == 1:
+            numbers.append(f"{arr[i]}")
+        else:
+            numbers.append(f"{arr[i]}{count}")
+        i += count - 1
+    delimiter = ''
+    print(delimiter.join(numbers))
+task_2()
