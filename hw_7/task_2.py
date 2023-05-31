@@ -13,8 +13,19 @@
 # **Ввод:** `print_operation_table(lambda x, y: x * y) ` 
 # **Вывод:**
 
+def print_operation_table(operation, num_rows=6, num_columns=6):
+    rows = []
+    for row in range(1, num_rows + 1):
+        row_elements = []
+        for column in range(1, num_columns + 1):
+            element = operation(row, column)
+            row_elements.append(element)
+        rows.append(row_elements)
 
-def task_2():
+    for row in rows:
+        row_formatted = [f"{element:8}" for element in row]
+        table_row = "".join(row_formatted)
+        print(table_row)
 
-    return 0
-task_2()
+
+print_operation_table(lambda x, y: x * y, 8, 2)
